@@ -42,7 +42,16 @@ Getting information about given data and data1
 print(data.info())
 print(data_1.info())
 
+def clean(x):
 
+    # count the number of missing values in each column of the DataFrame
+    x.isnull().sum()
+    # fill any missing values with 0 and update the DataFrame in place
+    x.fillna(0, inplace=True)
+
+    return
+
+clean(data)
 
 data = data.drop(columns=["Series Code", "Country Code"], axis=1)
 print("3333333")
@@ -183,7 +192,7 @@ def barplot2():
     mplt.legend((bar1, bar2, bar3, bar4), ('2000', '2005','2010','2015'),
                prop = {"size":25})
     
-    #1mplt.savefig("barplot2.png")
+    mplt.savefig("barplot2.png")
     
 """ Example for barplot
 """
